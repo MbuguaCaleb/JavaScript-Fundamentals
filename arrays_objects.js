@@ -120,3 +120,5 @@ const mapfilter = tasks.filter(function (task) {
 
 console.log(taskcompleted);
 console.log(mapfilter);
+
+
