@@ -122,3 +122,4 @@ console.log(taskcompleted);
 console.log(mapfilter);
 
 
+//Powerful JS functional Programming
