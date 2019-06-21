@@ -17,7 +17,34 @@
     document.getElementById("button").addEventListener("click", loadText);
 
     function loadText() {
-      console.log("button clicked");
+      //console.log("button clicked");
+
+      //create XHR Object
+
+      var xhr = new XMLHttpRequest();
+      //Open type function{type, ul/file,async}
+
+      // console.log(xhr);
+      xhr.open("GET", "sample.txt", true);
+
+      console.log("READYSTATE", xhr.readyState);
+      xhr.onload = function() {
+        console.log("READYSTATE", xhr.readyState);
+        if (this.status == 200) {
+          //console.log(this.responseText);
+        }
+      };
+
+      //   console.log("READYSTATE", xhr.readyState);
+      //   xhr.onreadystatechange = function() {
+      //     console.log("READYSTATE", xhr.readyState);
+      //     if (xhr.readyState === 4 && xhr.status === 200) {
+      //       //console.log(xhr.responseText);
+      //     }
+      //   };
+
+      //sends request
+      xhr.send();
     }
   </script>
 </html>
