@@ -24,15 +24,11 @@
       //console.log("button clicked");
 
       //create XHR Object
-
       var xhr = new XMLHttpRequest();
       //Open type function{type, ul/file,async}
-
       // console.log(xhr);
       xhr.open("GET", "sampletwo.txt", true);
-
       // //   console.log("READYSTATE", xhr.readyState);
-      // //
       xhr.onload = function() {
         console.log("READYSTATE", xhr.readyState);
         if (this.status == 200) {
