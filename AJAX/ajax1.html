@@ -10,6 +10,10 @@
     <button id="button">
       Get text File
     </button>
+
+    <br /><br />
+
+    <div id="text"></div>
   </body>
 
   <script>
@@ -25,13 +29,19 @@
       //Open type function{type, ul/file,async}
 
       // console.log(xhr);
-      xhr.open("GET", "sample.txt", true);
+      xhr.open("GET", "sampletwo.txt", true);
 
-      console.log("READYSTATE", xhr.readyState);
+      // //   console.log("READYSTATE", xhr.readyState);
+      // //
       xhr.onload = function() {
         console.log("READYSTATE", xhr.readyState);
         if (this.status == 200) {
           //console.log(this.responseText);
+          document.getElementById("text").innerHTML = this.responseText;
+        }else if(this.status == 404){
+
+            document.getElementById("text").innerHTML ='Not Found';
+
         }
       };
 
@@ -44,6 +54,16 @@
       //   };
 
       //sends request
+
+      //   //On progress
+      //   xhr.onprogress = function() {
+      //     console.log("READYSTATE", xhr.readyState);
+      //   };
+
+      //   //Xhr on error function
+      //   xhr.onerror = function() {
+      //     console.log("Request Error......");
+      //   };
       xhr.send();
     }
   </script>

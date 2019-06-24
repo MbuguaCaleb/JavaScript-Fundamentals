@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css" />
+  </head>
+  <body>
+    <input id="username" placeholder="username" />
+    <input id="password" placeholder="password" type="password" />
+    <button onclick="clicked(event)">click me</button>
+    <button
+      onclick="hide(event,function () {
+        console.log('called')
+    })"
+    >
+      hide me
+    </button>
+    <div id="results"></div>
+    <script>
+      // in this function we do the following
+      function clicked(event) {
+        //1)get the username for the username input
+        var username = document.getElementById("username").value;
+        //2)get the password from the password input
+        var password = document.getElementById("password").value;
+        //tell jquery to wait until the broswer has fully loaded the page
+        $(document).ready(function() {
+          //we get the result div and set it to show due to jquery issue
+          $("#results").show();
+          //we are making the ajax call
+          $.ajax({
+            url: "https://jsonplaceholder.typicode.com/users/1", //the url
+            beforeSend: function(result) {
+              let confirmResponse = confirm(
+                "we will check if, " +
+                  username +
+                  " ,and password, " +
+                  password +
+                  "exists"
+              );
+              //execute before calling
+              if (confirmResponse === true) {
+              } else {
+                throw Error("clicked cancel");
+              } //confirm the detail
+            },
+            success: function(result) {
+              Swal.fire({
+                title: "success!",
+                text: JSON.stringify(result),
+                type: "success",
+                confirmButtonText: "Cool"
+              });
+
+              $("#results").text(JSON.stringify(result));
+            }
+          });
+        });
+      }
+
+      function hide(event, callback) {
+        $("#results").fadeOut();
+        if (callback) callback(); //check before calling it.
+      }
+    </script>
+  </body>
+</html>
+
