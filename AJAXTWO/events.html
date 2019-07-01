@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Jquery| Events</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+    <style>
+      body {
+        font-size: 17px;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f4f4;
+        line-height: 1.5em;
+      }
+
+      header {
+        background: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px #000 solid;
+        margin-bottom: 10px;
+      }
+
+      #container {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Jquery Crash Course</h1>
+    </header>
+
+    <div id="container">
+      <h1>Mouse Events</h1>
+      <button id="btn1" class="btnClass">Button 1</button>
+      <button id="btn2">Button 2</button>
+      <p class="para1">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium,
+        recusandae. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        Laudantium, recusandae. Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. Laudantium, recusandae.
+      </p>
+
+      <h1 id="coords"></h1>
+    </div>
+    <!--Alternative way to run Jquery from the head after the
+      document has aleady loaded--->
+    <script>
+      $(document).ready(function() {
+        /*
+       $("#btn1").click(function() {
+             alert("Button Clicked!");
+        });
+
+        click function works exactly the same as the onclick
+        method below
+        $("#btn1").on("click", function() {
+          alert("Button Clicked!");
+        });
+
+          //Always rememeber classes are followed
+        //by the . and ids #
+
+        $("#btn1").on("click", function() {
+          //$(".para1").hide();
+          $(".para1").toggle();
+        });
+
+        $("#btn2").on("click", function() {
+          $(".para1").show();
+        });
+
+      $("#btn1").dblclick(function() {
+          //$(".para1").hide();
+          $(".para1").toggle();
+        });
+
+        $("#btn1").hover(function() {
+          //$(".para1").hide();
+          $(".para1").toggle();
+        });
+
+        //Hover is a short hand event for
+        //mouse enter and mouse leave
+
+        $("#btn1").on("mouseenter", function() {
+          $(".para1").toggle();
+        });
+
+        $("#btn1").on("mouseleave", function() {
+          $(".para1").toggle();
+        });
+
+          $("#btn1").on("mousemove", function() {
+          $(".para1").toggle();
+        });
+
+           $("#btn1").on("mousedown", function() {
+          $(".para1").toggle();
+        });
+
+        $("#btn1").on("mouseup", function() {
+          $(".para1").toggle();
+        });
+
+           $("#btn1").on("mousemove", function(e) {
+          console.log("Coords: Y:" + e.clientY + "Coords:X:" + e.clientX);
+        });
+
+         $(document).on("mousemove", function(e) {
+          console.log("Coords: Y:" + e.clientY + "Coords:X:" + e.clientX);
+        });
+        
+      */
+
+        //appends adds to the lastone
+
+        $(document).on("mousemove", function(e) {
+          $("#coords").html("Coords: Y:" + e.clientY + "Coords:X:" + e.clientX);
+        });
+      });
+    </script>
+  </body>
+</html>
