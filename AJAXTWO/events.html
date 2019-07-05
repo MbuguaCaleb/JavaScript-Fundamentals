@@ -47,8 +47,25 @@
         adipisicing elit. Laudantium, recusandae.
       </p>
 
-      <h1 id="coords"></h1>
+      <!-- <h1 id="coords"></h1> -->
+
+      <form id="form">
+        <label>Name</label><br />
+        <input type="text" id="name" name="name" />
+        <br />
+        <label>Email</label><br />
+        <input type="text" id="email" name="email" />
+        <br />
+        <label>Gender</label><br />
+        <select id="gender" name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <br />
+        <input type="submit" value="Submit" />
+      </form>
     </div>
+
     <!--Alternative way to run Jquery from the head after the
       document has aleady loaded--->
     <script>
@@ -116,13 +133,67 @@
          $(document).on("mousemove", function(e) {
           console.log("Coords: Y:" + e.clientY + "Coords:X:" + e.clientX);
         });
-        
-      */
-
         //appends adds to the lastone
 
         $(document).on("mousemove", function(e) {
           $("#coords").html("Coords: Y:" + e.clientY + "Coords:X:" + e.clientX);
+        });
+          //Form Methods
+
+        $("input").focus(function() {
+          // alert("Focus");
+          //$("input#name").css("background", "pink");
+          //this is a special key word which refers to the class you are
+          //currently in
+          $(this).css("background", "pink");
+        });
+
+        //blur method
+        $("input").blur(function() {
+          // alert("Focus");
+          //$("input#name").css("background", "pink");
+          //this is a special key word which refers to the class you are
+          //currently in
+          $(this).css("background", "white");
+        });
+
+        //Key Up and key down events
+
+        $("input").keyup(function(e) {
+          console.log(e.target.value);
+        });
+
+         //changeevent
+        $("select#gender").change(function() {
+          alert("Changed");
+        });
+
+        //Target Event LIstener
+        $("select#gender").change(function(e) {
+          alert(e.target.value);
+        });
+        
+      */
+        //Form Submitting but to see inout via console-log,You Must Prevent Dfault
+        $("#form").submit(function() {
+          console.log("Submitted");
+        });
+
+        //Form submitted(Preventing Default)
+        $("#form").submit(function(e) {
+          e.preventDefault();
+          console.log("Submitted");
+        });
+
+        //Javascript Event Object
+        //Jquery value helps you in getting the value of the
+        //input field
+
+        $("#form").submit(function(e) {
+          e.preventDefault();
+          var name = $("input#name").val();
+          console.log(name);
+          console.log("Submitted");
         });
       });
     </script>
