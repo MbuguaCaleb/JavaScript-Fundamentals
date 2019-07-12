@@ -1,76 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Jquery| Events</title>
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 
-    <style>
-      body {
-        font-size: 17px;
-        font-family: Arial, Helvetica, sans-serif;
-        background: #f4f4f4;
-        line-height: 1.5em;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Jquery| Events</title>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 
-      header {
-        background: #333;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-        border-bottom: 4px #000 solid;
-        margin-bottom: 10px;
-      }
+  <style>
+    body {
+      font-size: 17px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f4;
+      line-height: 1.5em;
+    }
 
-      #container {
-        width: 90%;
-        margin: auto;
-        padding: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Jquery Crash Course</h1>
-    </header>
+    header {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 4px #000 solid;
+      margin-bottom: 10px;
+    }
 
-    <div id="container">
-      <h1>Mouse Events</h1>
-      <button id="btn1" class="btnClass">Button 1</button>
-      <button id="btn2">Button 2</button>
-      <p class="para1">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium,
-        recusandae. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        Laudantium, recusandae. Lorem ipsum dolor sit amet consectetur,
-        adipisicing elit. Laudantium, recusandae.
-      </p>
+    #container {
+      width: 90%;
+      margin: auto;
+      padding: 10px;
+    }
+  </style>
+</head>
 
-      <!-- <h1 id="coords"></h1> -->
+<body>
+  <header>
+    <h1>Jquery Crash Course</h1>
+  </header>
 
-      <form id="form">
-        <label>Name</label><br />
-        <input type="text" id="name" name="name" />
-        <br />
-        <label>Email</label><br />
-        <input type="text" id="email" name="email" />
-        <br />
-        <label>Gender</label><br />
-        <select id="gender" name="gender">
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-        <br />
-        <input type="submit" value="Submit" />
-      </form>
-    </div>
+  <div id="container">
+    <h1>Mouse Events</h1>
+    <button id="btn1" class="btnClass">Button 1</button>
+    <button id="btn2">Button 2</button>
+    <p class="para1">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium,
+      recusandae. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      Laudantium, recusandae. Lorem ipsum dolor sit amet consectetur,
+      adipisicing elit. Laudantium, recusandae.
+    </p>
 
-    <!--Alternative way to run Jquery from the head after the
+    <!-- <h1 id="coords"></h1> -->
+
+    <form id="form">
+      <label>Name</label><br />
+      <input type="text" id="name" name="name" />
+      <br />
+      <label>Email</label><br />
+      <input type="text" id="email" name="email" />
+      <br />
+      <label>Gender</label><br />
+      <select id="gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+
+  <!--Alternative way to run Jquery from the head after the
       document has aleady loaded--->
-    <script>
-      $(document).ready(function() {
-        /*
+  <script>
+    $(document).ready(function () {
+      /*
        $("#btn1").click(function() {
              alert("Button Clicked!");
         });
@@ -174,28 +176,29 @@
         });
         
       */
-        //Form Submitting but to see inout via console-log,You Must Prevent Dfault
-        $("#form").submit(function() {
-          console.log("Submitted");
-        });
-
-        //Form submitted(Preventing Default)
-        $("#form").submit(function(e) {
-          e.preventDefault();
-          console.log("Submitted");
-        });
-
-        //Javascript Event Object
-        //Jquery value helps you in getting the value of the
-        //input field
-
-        $("#form").submit(function(e) {
-          e.preventDefault();
-          var name = $("input#name").val();
-          console.log(name);
-          console.log("Submitted");
-        });
+      //Form Submitting but to see inout via console-log,You Must Prevent Dfault
+      $("#form").submit(function () {
+        console.log("Submitted");
       });
-    </script>
-  </body>
+
+      //Form submitted(Preventing Default)
+      $("#form").submit(function (e) {
+        e.preventDefault();
+        console.log("Submitted");
+      });
+
+      //Javascript Event Object
+      //Jquery value helps you in getting the value of the
+      //input field
+
+      $("#form").submit(function (e) {
+        e.preventDefault();
+        var name = $("input#name").val();
+        console.log(name);
+        console.log("Submitted");
+      });
+    });
+  </script>
+</body>
+
 </html>
