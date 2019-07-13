@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Jquery| EFFECTS AND ANIMATIONS</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+    <style>
+        body {
+            font-size: 17px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            line-height: 1.5em;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px #000 solid;
+            margin-bottom: 10px;
+        }
+
+        #container {
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+        }
+
+        .myClass {
+            color: blue;
+            background: black;
+        }
+
+        #box {
+            background: #333;
+            color: #fff;
+            width: 500px;
+            height: 90px;
+            padding: 40px;
+            text-align: center;
+
+        }
+
+        #box2 {
+
+            background: red;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Jquery Crash Course|Effects And Animations</h1>
+    </header>
+    <div id="container">
+        <button id="btnFadeOut"> Fade Out </button>
+        <button id="btnFadeIn"> Fade in</button>
+        <button id="btnFadeTog"> Fade Toggle </button>
+
+        <hr>
+
+        <button id="btnSlideUp"> Slide Up</button>
+        <button id="btnSlideDown">SlideDown</button>
+        <button id="btnSlideTog"> SlideToggle</button>
+        <button id="btnStop"> Stop</button>
+
+        <hr>
+
+
+        <div id="box">
+
+            <h1>Hello world</h1>
+        </div>
+
+        <hr>
+
+
+        <button id="moveLeft"> Move Left</button>
+        <button id="moveRight">Move Right</button>
+        <button id="moveAround">Move Around</button>
+
+        <div id="box2">
+
+        </div>
+
+
+
+    </div>
+
+
+    <script>
+        /*
+
+//Fadeout taking OnlyTime Function
+
+
+ $('#btnFadeOut').click(function () {
+                $('#box').fadeOut(3000);
+
+            });
+
+
+        */
+
+        $(document).ready(function () {
+
+            //Taking a callback function that can do something
+            //when it is done.
+            $('#btnFadeOut').click(function () {
+                $('#box').fadeOut(3000, function () {
+
+                    $('#btnFadeOut').text('Its Gone');
+
+
+                });
+
+            });
+
+            //FadeIn
+
+            $('#btnFadeIn').click(function () {
+                $("#box").fadeIn(3000);
+
+            });
+
+            //FadeToggle
+
+            $('#btnFadeTog').click(function () {
+                $("#box").fadeToggle(1000);
+
+            });
+
+
+            //SlideDown
+
+            $('#btnSlideDown').click(function () {
+                $("#box").slideDown(3000);
+
+            });
+
+
+            //SlideDown
+
+            $('#btnSlideUp').click(function () {
+                $("#box").slideUp(3000);
+
+            });
+
+
+
+            //SlideDown
+
+            $('#btnSlideTog').click(function () {
+                $("#box").slideToggle(3000);
+
+            });
+
+            //Stop in the middle of effect
+
+            $('#btnStop').click(function () {
+
+                $('#box').stop();
+
+
+
+            });
+
+
+            $('#moveRight').click(function () {
+
+                $('#box2').animate({
+
+                    left: 500,
+                    height: '300px',
+                    width: '300px',
+                    opacity: '0.5'
+
+                });
+            });
+
+
+            $('#moveLeft').click(function () {
+
+                $('#box2').animate({
+
+                    left: 0,
+                    height: '100px',
+                    width: '100px',
+                    opacity: '1'
+
+                });
+            });
+
+
+            $('#moveAround').click(function () {
+
+
+                //inputing the dom selection into the variable as we will 
+                //use it mutiple times.
+                var box = $('#box2');
+                box.animate({
+                    left: 300,
+
+                });
+                box.animate({
+                    top: 300,
+
+                });
+                box.animate({
+                    left: 0,
+                    top: 300
+
+                });
+                box.animate({
+
+                    left: 0,
+                    top: 0
+
+                });
+
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>
