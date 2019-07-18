@@ -110,10 +110,57 @@ for (var i = 0; i < li.length; i++) {
   li[i].style.backgroundColor = "#f4f4f4";
 }
 
-
-*/
 //Selectors
 //(3)//QUERY SELECTOR
 
-//Always grabs the first element 
-var header = document.querySelector("main-header");
+//Always grabs the first element
+//grabs always the first element(id or class)
+//My grap all the type of elements(inputs but the first etc)
+
+var header = document.querySelector("#main-header");
+
+header.style.borderBottom = "solid 4px #ccc";
+
+var input = document.querySelector("input");
+
+//value and text..both setting and getting
+
+input.value = "Hello World";
+
+var submit = document.querySelector('input[type="submit"]');
+submit.value = "SEND";
+
+var item = document.querySelector(".list-group-item");
+item.style.color = "red";
+
+//grabbing the last child via css attribute
+var lastitem = document.querySelector(".list-group-item:last-child");
+lastitem.style.color = "blue";
+
+//nth child//css selectors
+var secondItem = document.querySelector(".list-group-item:nth-child(2)");
+secondItem.style.color = "coral";
+*/
+
+//QUery selectorALL
+//Grabs  more than one elemet eg class and tags
+
+var titles = document.querySelectorAll(".title");
+
+//returns a nodelist which is similar to a collection and
+//we can actually run array functions in the nodelist
+
+console.log(titles);
+titles[0].textContent = "Hello";
+
+//CSS Sudo Selector
+var odd = document.querySelectorAll("li:nth-child(odd)");
+var even = document.querySelectorAll("li:nth-child(even)");
+
+console.log(odd);
+for (var i = 0; i < odd.length; i++) {
+  //setting for each iteration in the LOOP
+
+  odd[i].style.backgroundColor = "#f4f4f4";
+  even[i].style.backgroundColor = "#ccc";
+}
