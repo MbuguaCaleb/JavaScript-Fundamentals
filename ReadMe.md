@@ -1,15 +1,16 @@
-- EASY TO REMEMBER
+# EASY TO REMEMBER NOTES
 
-* 1.DOM MODULE
+**DOM SECTION**
+
+**(a)Selectors**
 
 ```sh
 Main Modules(topics)
-
-  (a)document.getElementById()
-  (b)document.getElementsByClassName()
-  (c)document.getElementsByTagName()
-  (d)document.querySelector()
-  (e)document.querySelectorAll()
+  (i)document.getElementById()
+  (ii)document.getElementsByClassName()
+  (iii)document.getElementsByTagName()
+  (iv)document.querySelector()
+  (v)document.querySelectorAll()
 
 ```
 
@@ -20,7 +21,7 @@ Important notes
 
 ```
 
-8.Exit
+**Conclusion**
 
 ```sh
 Mbugua Caleb...Wow.I Love Javascript
