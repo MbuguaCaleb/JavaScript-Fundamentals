@@ -140,7 +140,8 @@ lastitem.style.color = "blue";
 //nth child//css selectors
 var secondItem = document.querySelector(".list-group-item:nth-child(2)");
 secondItem.style.color = "coral";
-*/
+
+
 
 //QUery selectorALL
 //Grabs  more than one elemet eg class and tags
@@ -164,3 +165,123 @@ for (var i = 0; i < odd.length; i++) {
   odd[i].style.backgroundColor = "#f4f4f4";
   even[i].style.backgroundColor = "#ccc";
 }
+*/
+
+/*Lesson NUmber two
+
+//Travesing the Dom
+
+
+
+/*Parent and CHILD NODes
+
+var itemList = document.querySelector('#items');
+console.log(itemList);
+
+
+//ParentNode
+
+console.log(itemList.parentNode);
+itemList.parentNode.style.backgroundColor = "#f4f4f4";
+console.log(itemList.parentNode.parentNode);
+console.log(itemList.parentNode.parentNode.parentNode);
+
+
+//Child Node property
+
+//Returns a node list as well as spaces 
+//It is thus unpreffered
+console.log(itemList.childNodes)
+
+
+
+//Returns a specific HTML Element
+console.log(itemList.children);
+
+//assessing a specific child
+
+console.log(itemList.children[1]);
+
+//styling thr child
+itemList.children[1].style.backgroundColor = 'yellow';
+
+
+//First Child Property
+//Inroduces line breaks and spaces same as the CHildNode
+console.log(itemList.firstChild);
+
+
+//FirstElement Child
+//More useful.Grabs the elements and ignores the 
+//white spaces
+console.log(itemList.firstElementChild);
+
+itemList.firstElementChild.textContent = 'Hello Caleb is a great programmer'
+
+
+
+//Last Child and Last Element Child
+var itemList = document.querySelector('#items');
+
+
+//returns the last text node(which contains line breaks and white spaces)
+console.log(itemList.lastChild);
+
+
+console.log(itemList.firstElementChild);
+itemList.lastElementChild.textContent = 'Caleb Loves Python'
+
+
+//nextSibling
+
+var itemList = document.querySelector('#items');
+console.log(itemList.nextSibling)
+
+//Next Element Sibling
+console.log(itemList.nextElementSibling)
+
+
+//previous Sibling
+var itemList = document.querySelector("#items");
+console.log(itemList.previousSibling);
+
+//Previous Element Sibling
+console.log(itemList.previousElementSibling);
+
+itemList.previousElementSibling.style.color = "green";
+
+*/
+
+//CREATING DOM ELEMENTS AND INSERTING THEM
+
+//CREATE ELEMENT
+
+var newDiv = document.createElement("div");
+
+//Add a class
+newDiv.className = "hello";
+
+//Ad id
+
+newDiv.id = "hello1";
+
+//ADD ATTRIBUTE
+newDiv.setAttribute("title", "Hello Div");
+
+//Create a textNode
+var newDivText = document.createTextNode("Hello World");
+
+//Add text to Div
+newDiv.appendChild(newDivText);
+
+//selecting the container class in the header
+var container = document.querySelector("header .container");
+
+var h1 = document.querySelector("header h1");
+
+console.log(newDiv);
+
+
+//changing font size of the created Dom Element
+newDiv.style.fontSize = "30px";
+container.insertBefore(newDiv, h1);
