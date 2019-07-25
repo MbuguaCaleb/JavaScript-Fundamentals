@@ -250,7 +250,6 @@ console.log(itemList.previousElementSibling);
 
 itemList.previousElementSibling.style.color = "green";
 
-*/
 
 //CREATING DOM ELEMENTS AND INSERTING THEM
 
@@ -281,7 +280,152 @@ var h1 = document.querySelector("header h1");
 
 console.log(newDiv);
 
-
 //changing font size of the created Dom Element
 newDiv.style.fontSize = "30px";
 container.insertBefore(newDiv, h1);
+
+
+*/
+
+
+/*
+
+/Tutorial section 3
+//Event Listeners
+
+var button = document
+  .getElementById("button")
+  .addEventListener("click", buttonClick);
+
+//Calling Button Click
+function buttonClick() {
+  //console.log("Button clicked");
+  //changing the text content after clicking
+  //document.getElementById("header-title").textContent = "Changed!";
+  //document.querySelector("#main").style.backgroundColor = "#f4f4f4";
+}
+
+
+//loading the event
+//as long as event is calling a function
+
+
+function buttonClick(e) {
+
+  console.log(e);
+
+  //loads the target for the event
+  //Keydown and keyup for inputs would return input
+  console.log(e.target);
+
+  console.log(e.target.id);
+
+  console.log(e.target.className);
+
+  console.log(e.target.classList);
+
+  //Adding an item  TO DOM via DOM ELEMENTS
+  var output = document.getElementById("output");
+
+  //Inner.HTML PURE JAVASCRIPT ADDS A NODE TO THE DOM
+  output.innerHTML = "<h3>" + e.target.id + "</h3>";
+
+
+  //returning event type from event object
+  console.log(e.type);
+
+  //Mouse Position from browser or window
+  console.log(e.clientX);
+  console.log(e.clientY);
+
+  //Relative Position from the offset itself
+  console.log(e.offsetX);
+  console.log(e.offsetY);
+
+
+  //Check Alt key
+  console.log(e.altKey);
+  console.log(e.ctrlKey);
+  console.log(e.shiftKey);
+
+
+*/
+
+//selecting the button
+/*
+var button = document.getElementById('button');
+var box = document.getElementById('box');
+
+
+
+//adding the event
+//button.addEventListener('click', runEvent)
+//button.addEventListener('dblclick', runEvent)
+//button.addEventListener('mousedown', runEvent)
+//button.addEventListener('mouseup', runEvent)
+
+//Mouse Events
+
+
+//box.addEventListener('mousemove', runEvent)
+//box.addEventListener('mouseenter', runEvent);
+//box.addEventListener('mouseleave', runEvent);
+
+//box.addEventListener('mouseover', runEvent);
+//box.addEventListener('mouseout', runEvent);
+
+
+
+//This refers to the ID .INNER Html
+
+/// output.innerHTML = '<h3>MouseX:' + e.offsetX + '</h3><h3>MouseY:' + e.offsetY + '</h3>';
+
+//box.style.backgroundColor = "rgb(" + e.offsetX + "," + e.offsetY + ",40)";
+//document.body.style.backgroundColor = "rgb(" + e.offsetX + "," + e.offsetY + ",40)";
+
+
+
+//Keyboard and input events
+//grabbing via query selector
+//An Input with type text
+
+var itemInput = document.querySelector('input[type="text"]');
+
+var form = document.querySelector('form');
+
+var select = document.querySelector('select');
+
+//itemInput.addEventListener('keydown', runEvent)
+//itemInput.addEventListener('keyup', runEvent)
+//itemInput.addEventListener('keypress', runEvent)
+
+
+//itemInput.addEventListener('focus', runEvent)
+//itemInput.addEventListener('blur', runEvent)
+
+
+//itemInput.addEventListener('cut', runEvent)
+//itemInput.addEventListener('paste', runEvent)
+
+
+//INPUT AND CHANGE EVENTS FOR DETECTING ANY CHANGE
+//select.addEventListener('change', runEvent)
+//select.addEventListener('input', runEvent)
+
+//itemInput.addEventListener('input', runEvent)
+
+function runEvent(e) {
+
+
+  console.log('EVENT TYPE:' + e.type);
+  //document.body.style.display = 'none';
+
+  console.log(e.target.value);
+  //document.getElementById('output').innerHTML = '<h3>' + e.target.value + '</h3>'
+  //output.innerHTML = '<h3>' + e.target.value + '</h3>'
+
+
+}
+
+*/
+
