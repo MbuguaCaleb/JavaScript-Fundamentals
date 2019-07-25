@@ -352,9 +352,8 @@ function buttonClick(e) {
 */
 
 //selecting the button
-/*
-var button = document.getElementById('button');
-var box = document.getElementById('box');
+//var button = document.getElementById('button');
+//var box = document.getElementById('box');
 
 
 
@@ -388,12 +387,13 @@ var box = document.getElementById('box');
 //Keyboard and input events
 //grabbing via query selector
 //An Input with type text
-
-var itemInput = document.querySelector('input[type="text"]');
+//var itemInput = document.querySelector('input[type="text"]');
 
 var form = document.querySelector('form');
 
-var select = document.querySelector('select');
+form.addEventListener('submit', runEvent)
+
+//var select = document.querySelector('select');
 
 //itemInput.addEventListener('keydown', runEvent)
 //itemInput.addEventListener('keyup', runEvent)
@@ -409,23 +409,19 @@ var select = document.querySelector('select');
 
 
 //INPUT AND CHANGE EVENTS FOR DETECTING ANY CHANGE
-//select.addEventListener('change', runEvent)
-//select.addEventListener('input', runEvent)
+//select.addEventListener('change', runEvent)select.addEventListener('input', runEvent)
 
 //itemInput.addEventListener('input', runEvent)
 
 function runEvent(e) {
-
+  e.preventDefault()
 
   console.log('EVENT TYPE:' + e.type);
   //document.body.style.display = 'none';
 
-  console.log(e.target.value);
+  // console.log(e.target.value);
   //document.getElementById('output').innerHTML = '<h3>' + e.target.value + '</h3>'
   //output.innerHTML = '<h3>' + e.target.value + '</h3>'
 
 
 }
-
-*/
-
