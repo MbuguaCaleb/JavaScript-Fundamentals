@@ -408,7 +408,7 @@ form.addEventListener('submit', runEvent)
 //itemInput.addEventListener('paste', runEvent)
 
 
-//INPUT AND CHANGE EVENTS FOR DETECTING ANY CHANGE
+//INPUT AND CHANGE EVENTS FOR DETECTING ANY CHANGE.
 //select.addEventListener('change', runEvent)select.addEventListener('input', runEvent)
 
 //itemInput.addEventListener('input', runEvent)
