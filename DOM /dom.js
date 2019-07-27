@@ -287,7 +287,6 @@ container.insertBefore(newDiv, h1);
 
 */
 
-
 /*
 
 /Tutorial section 3
@@ -351,6 +350,7 @@ function buttonClick(e) {
 
 */
 
+/*
 //selecting the button
 //var button = document.getElementById('button');
 //var box = document.getElementById('box');
@@ -424,4 +424,56 @@ function runEvent(e) {
   //output.innerHTML = '<h3>' + e.target.value + '</h3>'
 
 
+}
+
+
+//Ending of the DOM EVENTS SECTION
+
+
+*/
+
+//section4
+
+var form = document.getElementById("addForm");
+
+//grabbing the UL LIST WHERE THE CREATED LI(S) WILL BE INSTERTED
+
+var itemList = document.getElementById("items");
+
+//Add submit event
+form.addEventListener("submit", addItem);
+
+//Add item
+function addItem(e) {
+  e.preventDefault();
+
+  //Get input value
+  var newItem = document.getElementById("item").value;
+
+  //create new li element
+  var li = document.createElement("li");
+  //Add class
+  li.className = "list-group-item";
+
+  console.log(li);
+
+  //Add text node with input value
+
+  li.appendChild(document.createTextNode(newItem));
+
+  //create delete button element
+  var deleteBtn = document.createElement("button");
+
+  //aDD Classes to delete button
+  deleteBtn.className = "btn btn-danger btn-sm float-right delete";
+
+  //Appennd text node
+  deleteBtn.appendChild(document.createTextNode("X"));
+
+  //Append button to Li
+  li.append(deleteBtn);
+
+  //appending li to the list
+  //the li is a child of the itemList
+  itemList.appendChild(li);
 }
