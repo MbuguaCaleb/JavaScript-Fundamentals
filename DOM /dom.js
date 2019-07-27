@@ -440,8 +440,18 @@ var form = document.getElementById("addForm");
 
 var itemList = document.getElementById("items");
 
+//filtring the elements
+var filter = document.getElementById("filter");
+
 //Add submit event
 form.addEventListener("submit", addItem);
+
+//Delete event
+//Event listener that is listening for a click event
+itemList.addEventListener("click", removeItem);
+
+//creating event for filter
+filter.addEventListener("keyup", filterItems);
 
 //Add item
 function addItem(e) {
@@ -476,4 +486,48 @@ function addItem(e) {
   //appending li to the list
   //the li is a child of the itemList
   itemList.appendChild(li);
+}
+
+//Remove Item
+function removeItem(e) {
+  console.log(e);
+
+  if (e.target.classList.contains("delete")) {
+    //console.log(1);
+    if (confirm("Are You Sure?")) {
+      //getting the parent Element
+      //The parent element is the actual li
+      var li = e.target.parentElement;
+      //removving the child from the li
+      itemList.removeChild(li);
+    }
+  }
+}
+
+//Filter items
+function filterItems(e) {
+  //convert to lowerCase
+
+  var text = e.target.value.toLowerCase();
+  //console.log(text);
+
+  //getLi(s)
+  var items = itemList.getElementsByTagName("li");
+
+  //turning html collection into an array
+  //there are certain things you cannot do with the HTML Collection
+  Array.from(items).forEach(function (item) {
+
+    var itemName = item.firstChild.textContent;
+    console.log(itemName);
+    if (itemName.toLowerCase().indexOf(text) != -1) {
+
+      //setting the display style
+      item.style.display = 'block';
+    } else {
+
+      item.style.display = 'none';
+    }
+
+  });
 }
