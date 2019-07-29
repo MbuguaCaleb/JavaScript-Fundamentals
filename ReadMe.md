@@ -47,6 +47,20 @@ Parent node(Parent is where a certain Node Element is contained)
 
 ```
 
+**Higer Order methods**
+
+```
+(a)foreach
+(b)filer
+(c)Map
+(d)Sort
+(e)Reduce
+
+
+all the higher order Methods can be combined together
+
+```
+
 **Conclusion**
 
 ```sh
