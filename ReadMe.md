@@ -61,6 +61,24 @@ all the higher order Methods can be combined together
 
 ```
 
+**ASTNCHRONOUSJAVASCRIPT**
+
+```
+Asynchronous means something is going on but you do not want to wait until it is
+done to conitunue your program
+```
+
+```
+Synchronous programming means you have to wait until a process is completely finished before you move on
+```
+
+```
+
+(a)Callbacks
+(b)Promises
+(c)Async Await
+```
+
 **Conclusion**
 
 ```sh
