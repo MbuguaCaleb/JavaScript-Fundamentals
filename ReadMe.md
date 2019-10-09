@@ -103,6 +103,11 @@ All the promies are handled within the major execution time to show us the value
 fetch api employs two .thens
 ```
 
+```
+Async await is a more elegant way to handle promises.
+
+```
+
 **Conclusion**
 
 ```sh
