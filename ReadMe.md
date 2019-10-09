@@ -69,7 +69,7 @@ done to conitunue your program
 ```
 
 ```
-Synchronous programming means you have to wait until a process is completely finished before you move on
+Synchronous programming means you have to wait until a process is completely finished before you move on.
 ```
 
 ```
