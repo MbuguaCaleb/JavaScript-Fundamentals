@@ -69,6 +69,13 @@ done to conitunue your program
 ```
 
 ```
+You exectue the call back within the main exection time when using callback functions.
+
+You can pass a function as a parameter within another function.
+
+```
+
+```
 Synchronous programming means you have to wait until a process is completely finished before you move on.
 ```
 
