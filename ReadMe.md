@@ -86,6 +86,23 @@ Synchronous programming means you have to wait until a process is completely fin
 (c)Async Await
 ```
 
+```
+Promises take in two parameters which are resolve and reject ..
+
+if resolve -> .then()
+
+else error -> .catch()
+
+Promise .all()  is used when you have many promises.
+
+Promises take however long the execution time of the latest promises..
+
+All the promies are handled within the major execution time to show us the values.
+
+
+fetch api employs two .thens
+```
+
 **Conclusion**
 
 ```sh
